@@ -91,7 +91,7 @@ def show_note():
     list_tags.clear()
     list_tags.addItems(notes[key]["tags"])
 
- def add_note():
+def add_note():
     note_name, ok = QInputDialog.getText(notes_win, "Add note", "Name of note: ")
     if ok and note_name != "":
         notes[note_name] = {"text" : "", "tags" : []}
@@ -99,7 +99,7 @@ def show_note():
         list_tags.addItems(notes[note_name]["tags"])
         print(notes)
         
- def save_note():
+def save_note():
     if list_notes.selectedItems():
         key = list_notes.selectedItems()[0].text()
         notes[key]["text"] = field_text.toPlainText()
